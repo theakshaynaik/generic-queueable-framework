@@ -8,5 +8,5 @@ Light-weight alternative to Batch class
 
 ## Read All About It
 
-- [Queueable Apex](https://developer.salesforce.com/tools/vscode/](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_queueing_jobs.htm)
+- [Queueable Apex](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_queueing_jobs.htm)
 - [Using Batch Apex](https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_batch_interface.htm)
