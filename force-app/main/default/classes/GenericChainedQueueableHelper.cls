@@ -7,7 +7,7 @@ public with sharing class GenericChainedQueueableHelper {
 
     /**
      * @description - declaration for the logic to be executed in async context
-     * @param genericJobsAndCurrentJobMap - map to store generic jobs and current queueable job number
+     * @param genericJobsAndCurrentJobMap - map to store generic jobs and current job number
      */
     public void execute(Map<String, Object> genericJobsAndCurrentJobMap) {
         Integer currentJobNumber = (Integer) genericJobsAndCurrentJobMap.get('currentJobNumber');
