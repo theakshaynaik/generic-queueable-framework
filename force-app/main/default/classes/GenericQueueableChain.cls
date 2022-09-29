@@ -12,6 +12,7 @@ public with sharing class GenericQueueableChain {
      * @param chunkSize - no of records to be processed in one queueable job (remaining records will be re-enqueued)
      */
     public static void chunkJobs(Type classType, Set<Id> ids, Integer chunkSize) {
+        Log.push('GenericQueueableChain', 'chunkJobs');
         if(ids.size() <= chunkSize) {
             GenericQueueableChainService.addJob(classType, ids);	
             GenericQueueableChainService.runJobInQueues();
@@ -22,6 +23,7 @@ public with sharing class GenericQueueableChain {
             GenericQueueableChainService.addJob(classType, indexAndRecordIdsMap.get(index));	
         }
         GenericQueueableChainService.runJobInQueues();
+        Log.pop();
     }
 
     /**

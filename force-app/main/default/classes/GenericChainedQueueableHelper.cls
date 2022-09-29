@@ -10,22 +10,28 @@ public with sharing class GenericChainedQueueableHelper {
      * @param genericJobsAndCurrentJobMap - map to store generic jobs and current job number
      */
     public void execute(Map<String, Object> genericJobsAndCurrentJobMap) {
-        Integer currentJobNumber = (Integer) genericJobsAndCurrentJobMap.get('currentJobNumber');
-        Integer nextJobNumber = currentJobNumber + 1;
-        List<GenericQueueableJob> jobs = (List<GenericQueueableJob>) genericJobsAndCurrentJobMap.get('jobs');
-        GenericQueueableJob job = jobs[currentJobNumber];
-        
-        IGenericQueueable genericQueueableInstance = (IGenericQueueable) job.getClassType().newInstance();
-        genericQueueableInstance.execute(job.getIds());
-    
-        if(nextJobNumber >= jobs.size()) {
-            return;
+        Log.push('GenericChainedQueueableHelper', 'execute');
+        Integer nextJobNumber;
+        List<GenericQueueableJob> jobs;
+        try {
+            Integer currentJobNumber = (Integer) genericJobsAndCurrentJobMap.get('currentJobNumber');
+            nextJobNumber = currentJobNumber + 1;
+            jobs = (List<GenericQueueableJob>) genericJobsAndCurrentJobMap.get('jobs');
+            GenericQueueableJob job = jobs[currentJobNumber];
+            IGenericQueueable genericQueueableInstance = (IGenericQueueable) job.getClassType().newInstance();
+            genericQueueableInstance.execute(job.getIds());
+        } catch (Exception e) {
+            Log.message(e.getMessage(), 'GenericChainedQueueableHelper Exception', LoggingLevel.ERROR);
+        } finally {
+            if(nextJobNumber >= jobs.size()) {
+                return;
+            }
+            if(Limits.getQueueableJobs() < Limits.getLimitQueueableJobs()) {
+                executeGenericQueueable(jobs, nextJobNumber);
+                return;
+            }
+            executeGenericSchedulable(jobs, nextJobNumber);
         }
-        if(Limits.getQueueableJobs() < Limits.getLimitQueueableJobs()) {
-            executeGenericQueueable(jobs, nextJobNumber);
-            return;
-        }
-        executeGenericSchedulable(jobs, nextJobNumber);
     }
 
     /**

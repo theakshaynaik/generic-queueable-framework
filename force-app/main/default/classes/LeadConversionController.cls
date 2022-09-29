@@ -26,7 +26,7 @@ public without sharing class LeadConversionController {
                 return;
             }
             Integer chunkSize = Integer.valueOf(chunkSizeStr);
-            GenericQueueableChain.chunkJobs(LeadConversionBulkAsyncService.class, filteredLeadIdSet, chunkSize);
+            GenericQueueableChain.chunkJobs(GenericQueueableImpl.class, filteredLeadIdSet, chunkSize);
             Log.pop();
         } catch(Exception ex){
             Log.message('Error :' + ex.getMessage() + '  ' + ex.getLineNumber() + '  ' + ex.getStackTraceString(), 'Bulk_Lead_Conversion', LoggingLevel.ERROR);
