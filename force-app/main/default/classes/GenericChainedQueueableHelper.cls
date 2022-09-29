@@ -10,7 +10,6 @@ public with sharing class GenericChainedQueueableHelper {
      * @param genericJobsAndCurrentJobMap - map to store generic jobs and current job number
      */
     public void execute(Map<String, Object> genericJobsAndCurrentJobMap) {
-        Log.push('GenericChainedQueueableHelper', 'execute');
         Integer nextJobNumber;
         List<GenericQueueableJob> jobs;
         try {
@@ -21,7 +20,7 @@ public with sharing class GenericChainedQueueableHelper {
             IGenericQueueable genericQueueableInstance = (IGenericQueueable) job.getClassType().newInstance();
             genericQueueableInstance.execute(job.getIds());
         } catch (Exception e) {
-            Log.message(e.getMessage(), 'GenericChainedQueueableHelper Exception', LoggingLevel.ERROR);
+            System.debug('Exception: ' + e.getLineNumber() + ' error: ' + e.getMessage());
         } finally {
             if(nextJobNumber >= jobs.size()) {
                 return;

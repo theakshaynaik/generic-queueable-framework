@@ -1,0 +1,164 @@
+{
+  "summary": {
+    "outcome": "Failed",
+    "testsRan": 7,
+    "passing": 6,
+    "failing": 1,
+    "skipped": 0,
+    "passRate": "86%",
+    "failRate": "14%",
+    "skipRate": "0%",
+    "testStartTime": "Thu Sep 29 2022 6:03:21 PM",
+    "testExecutionTimeInMs": 566,
+    "testTotalTimeInMs": 566,
+    "commandTimeInMs": 639,
+    "hostname": "https://barclays178-dev-ed.my.salesforce.com",
+    "orgId": "00D5j0000036ZqpEAE",
+    "username": "aksnaik22@zerotoherolwc.com",
+    "testRunId": "7075j00003Ru6EO",
+    "userId": "0055j000002vSJLAA2"
+  },
+  "tests": [
+    {
+      "id": "07M5j0000028sBpEAI",
+      "queueItemId": "7095j000000cjE9AAI",
+      "stackTrace": "(System Code)\nClass.GenericQueueableChain_Test.testServiceExecuteGenericSchedulable: line 59, column 1",
+      "message": "System.FinalException: Testing has not started",
+      "asyncApexJobId": "7075j00003Ru6EOAAZ",
+      "methodName": "testServiceExecuteGenericSchedulable",
+      "outcome": "Fail",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p5j00000LyAZRAA3",
+        "name": "GenericQueueableChain_Test",
+        "namespacePrefix": null,
+        "fullName": "GenericQueueableChain_Test"
+      },
+      "runTime": 45,
+      "testTimestamp": "2022-09-29T14:03:24.000+0000",
+      "fullName": "GenericQueueableChain_Test.testServiceExecuteGenericSchedulable",
+      "diagnostic": {
+        "exceptionMessage": "System.FinalException: Testing has not started",
+        "exceptionStackTrace": "(System Code)\nClass.GenericQueueableChain_Test.testServiceExecuteGenericSchedulable: line 59, column 1",
+        "className": "GenericQueueableChain_Test",
+        "compileProblem": "",
+        "lineNumber": 59,
+        "columnNumber": 1
+      }
+    },
+    {
+      "id": "07M5j0000028sBqEAI",
+      "queueItemId": "7095j000000cjE9AAI",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7075j00003Ru6EOAAZ",
+      "methodName": "testSingleJob",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p5j00000LyAZRAA3",
+        "name": "GenericQueueableChain_Test",
+        "namespacePrefix": null,
+        "fullName": "GenericQueueableChain_Test"
+      },
+      "runTime": 59,
+      "testTimestamp": "2022-09-29T14:03:24.000+0000",
+      "fullName": "GenericQueueableChain_Test.testSingleJob"
+    },
+    {
+      "id": "07M5j0000028sBrEAI",
+      "queueItemId": "7095j000000cjE9AAI",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7075j00003Ru6EOAAZ",
+      "methodName": "testSingleJobFailure",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p5j00000LyAZRAA3",
+        "name": "GenericQueueableChain_Test",
+        "namespacePrefix": null,
+        "fullName": "GenericQueueableChain_Test"
+      },
+      "runTime": 57,
+      "testTimestamp": "2022-09-29T14:03:24.000+0000",
+      "fullName": "GenericQueueableChain_Test.testSingleJobFailure"
+    },
+    {
+      "id": "07M5j0000028sBlEAI",
+      "queueItemId": "7095j000000cjE9AAI",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7075j00003Ru6EOAAZ",
+      "methodName": "testBulkChunkJobs",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p5j00000LyAZRAA3",
+        "name": "GenericQueueableChain_Test",
+        "namespacePrefix": null,
+        "fullName": "GenericQueueableChain_Test"
+      },
+      "runTime": 151,
+      "testTimestamp": "2022-09-29T14:03:23.000+0000",
+      "fullName": "GenericQueueableChain_Test.testBulkChunkJobs"
+    },
+    {
+      "id": "07M5j0000028sBmEAI",
+      "queueItemId": "7095j000000cjE9AAI",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7075j00003Ru6EOAAZ",
+      "methodName": "testHelperExecuteGenericQueueable",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p5j00000LyAZRAA3",
+        "name": "GenericQueueableChain_Test",
+        "namespacePrefix": null,
+        "fullName": "GenericQueueableChain_Test"
+      },
+      "runTime": 53,
+      "testTimestamp": "2022-09-29T14:03:23.000+0000",
+      "fullName": "GenericQueueableChain_Test.testHelperExecuteGenericQueueable"
+    },
+    {
+      "id": "07M5j0000028sBnEAI",
+      "queueItemId": "7095j000000cjE9AAI",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7075j00003Ru6EOAAZ",
+      "methodName": "testHelperExecuteGenericSchedulable",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p5j00000LyAZRAA3",
+        "name": "GenericQueueableChain_Test",
+        "namespacePrefix": null,
+        "fullName": "GenericQueueableChain_Test"
+      },
+      "runTime": 146,
+      "testTimestamp": "2022-09-29T14:03:24.000+0000",
+      "fullName": "GenericQueueableChain_Test.testHelperExecuteGenericSchedulable"
+    },
+    {
+      "id": "07M5j0000028sBoEAI",
+      "queueItemId": "7095j000000cjE9AAI",
+      "stackTrace": null,
+      "message": null,
+      "asyncApexJobId": "7075j00003Ru6EOAAZ",
+      "methodName": "testServiceExecuteGenericQueueable",
+      "outcome": "Pass",
+      "apexLogId": null,
+      "apexClass": {
+        "id": "01p5j00000LyAZRAA3",
+        "name": "GenericQueueableChain_Test",
+        "namespacePrefix": null,
+        "fullName": "GenericQueueableChain_Test"
+      },
+      "runTime": 55,
+      "testTimestamp": "2022-09-29T14:03:24.000+0000",
+      "fullName": "GenericQueueableChain_Test.testServiceExecuteGenericQueueable"
+    }
+  ]
+}

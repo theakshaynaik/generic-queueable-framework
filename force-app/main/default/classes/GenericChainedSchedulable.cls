@@ -32,10 +32,7 @@ public with sharing class GenericChainedSchedulable implements Schedulable {
     * @param sc - SchedulableContext
     */
     public void execute(SchedulableContext sc) {
-        Log.push('GenericChainedSchedulable', 'execute');
         System.enqueueJob(new GenericChainedQueueable(jobs, currentJobNumber));
         System.abortJob(sc.getTriggerId());
-        Log.pop();
-        Log.emit();
     }
 }

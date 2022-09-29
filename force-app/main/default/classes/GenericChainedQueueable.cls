@@ -32,7 +32,6 @@ public with sharing class GenericChainedQueueable implements Queueable, Database
      * @param context - QueueableContext
      */
     public void execute(QueueableContext context) {
-        Log.push('GenericChainedQueueable', 'execute');
         if(this.jobs == null || this.currentJobNumber == null) {
             return;
         }
@@ -40,7 +39,5 @@ public with sharing class GenericChainedQueueable implements Queueable, Database
         genericJobsAndCurrentJobMap.put('jobs', this.jobs);
         genericJobsAndCurrentJobMap.put('currentJobNumber', this.currentJobNumber);
         new GenericChainedQueueableHelper().execute(genericJobsAndCurrentJobMap);
-        Log.forcePop('GenericChainedQueueable', 'execute');
-        Log.emit();
     }
 }
