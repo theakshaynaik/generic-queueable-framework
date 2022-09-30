@@ -3,7 +3,7 @@
 * @date 23/09/22
 * @description Async Service for opportunity enrichment
 */
-public without sharing class GenericQueueableImpl implements IGenericQueueable {
+public with sharing class GenericQueueableImpl implements IGenericQueueable {
 
     /**
      * @description - logic to be executed in async context
