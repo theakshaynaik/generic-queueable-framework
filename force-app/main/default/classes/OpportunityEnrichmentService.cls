@@ -3,7 +3,7 @@
 * @date 27/09/22
 * @description Service to enrich opportunities
 */
-public without sharing class OpportunityEnrichmentService {
+public with sharing class OpportunityEnrichmentService {
 
     /**
      * @description Method to enrich opportunities
