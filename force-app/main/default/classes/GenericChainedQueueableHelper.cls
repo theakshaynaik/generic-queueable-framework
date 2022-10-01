@@ -6,7 +6,7 @@
 public with sharing class GenericChainedQueueableHelper {
 
     /**
-     * @description - declaration for the logic to be executed in async context
+     * @description - execute the logic as per the classtype and re-queue the next job, if any
      * @param genericJobsAndCurrentJobMap - map to store generic jobs and current job number
      */
     public void execute(Map<String, Object> genericJobsAndCurrentJobMap) {
